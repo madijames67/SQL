@@ -1,0 +1,27 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, color TEXT, size TEXT, year_made INTEGER);
+INSERT INTO store VALUES (1, "tshirt", 2.99, "blue", "small", 1990);
+INSERT INTO store VALUES (2, "vneck", 5.99, "grey", "large", 2012);
+INSERT INTO store VALUES (3, "croptop", 4.99, "pink", "medium", 2017);
+INSERT INTO store VALUES (4, "bellbottoms", 15.99, "orange", "large", 1976);
+INSERT INTO store VALUES (5, "skinnyjeans", 19.99, "black", "small", 2009);
+INSERT INTO store VALUES (6, "jeanjacket", 13.99, "blue", "xlarge", 1998);
+INSERT INTO store VALUES (7, "sweatsuit", 19.99, "grey", "medium", 2005);
+INSERT INTO store VALUES (8, "tshirt", 7.99, "red", "large", 1995);
+INSERT INTO store VALUES (9, "vneck", 5.99, "black", "small", 2010);
+INSERT INTO store VALUES (10, "croptop", 4.99, "white", "xlarge", 2016);
+INSERT INTO store VALUES (11, "bellbottoms", 15.99, "blue", "xlarge", 1978);
+INSERT INTO store VALUES (12, "skinnyjeans", 19.99, "white", "medium", 2014);
+INSERT INTO store VALUES (13, "jeanjacket", 13.99, "grey", "large", 2008);
+INSERT INTO store VALUES (14, "sweatsuit", 19.99, "pink", "small", 2004);
+INSERT INTO store VALUES (15, "tshirt", 3.99, "white", "medium", 1990);
+
+--Display the database order by price.
+SELECT * FROM store ORDER BY price;
+
+--What is the average price of tshirts from the store?
+SELECT AVG(price) "avg tshirt item price" FROM store WHERE item="tshirt"; 
+
+--What is the sum of all items from the store?
+SELECT SUM(price) FROM store
