@@ -1,3 +1,5 @@
+Analyze superbowl results data using advanced SQL queries. 
+
 CREATE TABLE superbowls(
   Date      TEXT PRIMARY KEY,
   SB         TEXT,
