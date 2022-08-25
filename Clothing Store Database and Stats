@@ -1,3 +1,5 @@
+In my first SQL project, I created a clothing store database and used basic SQl concepts to analyze the data.
+
 --Create a clothing store database
 
 CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, color TEXT, size TEXT, year_made INTEGER);
