@@ -1,4 +1,4 @@
-Analyze superbowl results data using advanced SQL queries. 
+In this SQL, I analyze superbowl results data using advanced SQL queries. 
 
 CREATE TABLE superbowls(
   Date      TEXT PRIMARY KEY,
