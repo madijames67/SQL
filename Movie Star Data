@@ -1,0 +1,26 @@
+In this SQL, I created two tables for movie stars and their spouses, and used relational queries (JOINs) to combine the data.
+
+--Create a table for movie stars showing their name, age, and a film they starred in. 
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER, starred_in TEXT);
+INSERT INTO movie_stars (name, age, starred_in) VALUES ("Steve Carell", "60", "Dispicable Me");
+INSERT INTO movie_stars (name, age, starred_in) VALUES ("John Krasinski", "42", "A Quiet Place");
+INSERT INTO movie_stars (name, age, starred_in) VALUES ("Jenna Fischer", "48", "Hall Pass");
+INSERT INTO movie_stars (name, age, starred_in) VALUES ("Angela Kinsey", "51", "Tall Girl");
+INSERT INTO movie_stars (name, age, starred_in) VALUES ("Rainn Wilson", "56", "The Rocker");
+
+--Create a table listing those same movie stars and their spouses. 
+CREATE TABLE spouses (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, spouse_name TEXT);
+INSERT INTO spouses (fullname, spouse_name) VALUES ("Steve Carell", "Nancy Carell");
+INSERT INTO spouses (fullname, spouse_name) VALUES ("John Krasinski", "Emily Blunt");
+INSERT INTO spouses (fullname, spouse_name) VALUES ("Jenna Fischer", "Lee Kirk");
+INSERT INTO spouses (fullname, spouse_name) VALUES ("Angela Kinsey", "Joshua Snyder");
+INSERT INTO spouses (fullname, spouse_name) VALUES ("Rainn Wilson", "Holiday Reinhorn");
+
+--Display the data from movie stars table.
+SELECT * FROM movie_stars;
+
+--Display the data from spouses table.
+SELECT * FROM spouses;
+
+--Using relational queries (JOINs), display the data from the movie stars table and the spouses table in one combined table.
+SELECT m.name, m.age, m.starred_in, s.spouse_name FROM movie_stars m JOIN spouses s ON m.name=s.fullname;
