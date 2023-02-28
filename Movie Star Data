@@ -22,5 +22,10 @@ SELECT * FROM movie_stars;
 --Display the data from spouses table.
 SELECT * FROM spouses;
 
---Using relational queries (JOINs), display the data from the movie stars table and the spouses table in one combined table.
-SELECT m.name, m.age, m.starred_in, s.spouse_name FROM movie_stars m JOIN spouses s ON m.name=s.fullname;
+--Use an explicit inner join to combine all relevent data from the two tables. 
+SELECT * FROM movie_stars JOIN spouses ON movie_stars.name=spouses.fullname;
+
+--Use a left outer join to display the movie stars and their ages from the movie stars table along with their spouses from the spouses table.
+SELECT m.name, m.age, s.spouse_name FROM movie_stars m LEFT OUTER JOIN spouses s ON m.name=s.fullname;
+
+ 
