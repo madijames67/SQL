@@ -1,8 +1,8 @@
-#For this project, I downloaded Spotify data from Kaggle, 
+For this project, I downloaded Spotify data from Kaggle, 
 created a table to insert the data into, 
 then performed analytics on the data using SQL.
 
-#Creating the table:
+Creating the table:
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
 artist_name varchar NOT NULL,
@@ -23,16 +23,16 @@ tempo decimal(6,3) NOT NULL,
 duration_ms integer NOT NULL,
 time_signature integer NOT NULL )
 
-#1. What is the average popularity, danceability, and energy by artist and track? 
+1. What is the average popularity, danceability, and energy by artist and track? 
 SELECT artist_name, track_name, avg(popularity), avg(danceability), avg(energy)
 FROM BIT_DB.spotifydata
 GROUP BY artist_name, track_name
 
-#2. Who are the top 10 artists based on popularity? 
+2. Who are the top 10 artists based on popularity? 
 SELECT track_name, artist_name, popularity
 FROM BIT_DB.spotifydata
 ORDER BY popularity desc
 LIMIT 10
 
-#3. What artist released the longest song? 
+3. What artist released the longest song? 
 SELECT artist_name, track_name, MAX (duration_ms) FROM BIT_DB.Spotifydata;
