@@ -67,23 +67,23 @@ INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,Cit
 INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,City,State) VALUES ('Jan 14 1968','II (2)','Green Bay Packers',33,'Oakland Raiders',14,'Bart Starr+','Orange Bowl','Miami','Florida');
 INSERT INTO superbowls(Date,SB,Winner,Winner_Pts,Loser,Loser_Pts,MVP,Stadium,City,State) VALUES ('Jan 15 1967','I (1)','Green Bay Packers',35,'Kansas City Chiefs',10,'Bart Starr+','Memorial Coliseum','Los Angeles','California');
 
---Display the database. 
+1. Display the database. 
 SELECT * FROM superbowls; 
 
---What are the average winner points?
+2. What are the average winner points?
 SELECT AVG(Winner_Pts) FROM superbowls;
 SELECT * FROM superbowls ORDER BY Winner_Pts; 
 
---What is the maximum winner points earned?
+3. What is the maximum winner points earned?
 SELECT Winner, MAX(Winner_Pts) FROM superbowls; 
 
---What is the minimum loser points earned?
+4. What is the minimum loser points earned?
 SELECT Loser, MIN(Loser_Pts) FROM superbowls;
 
---Use the HAVING clause to calculate teams with high winner points.
+5. Use the HAVING clause to calculate teams with high winner points.
 SELECT Winner, SUM(Winner_Pts) FROM superbowls GROUP BY Winner HAVING Winner_Pts > 30; 
 
---Use the CASE clause to group data values and create classifications for the number of loser points for each team. 
+6. Use the CASE clause to group data values and create classifications for the number of loser points for each team. 
 SELECT Loser, Loser_Pts,
 CASE
 WHEN Loser_Pts > 10 THEN "bad_team"
@@ -92,8 +92,9 @@ WHEN Loser_Pts = 10 THEN "neutral_team"
 END as "team_type" 
 FROM superbowls ORDER BY Loser_Pts; 
 
---Which teams won after the year 2000 OR won in the state of California? 
+7. Which teams won after the year 2000 OR won in the state of California? 
 SELECT "Winner", "Date", "State" FROM superbowls WHERE "Date" < "Jan 1 2000" OR "State" = "California" ORDER BY "Date"; 
---Which teams won before the year 2000 AND won in the state of California?
+
+8. Which teams won before the year 2000 AND won in the state of California?
 SELECT "Winner", "Date", "State" FROM superbowls WHERE "Date" > "Jan 1 2000" AND "State" = "California" ORDER By "Date";
 
