@@ -1,6 +1,6 @@
 In my first SQL project, I created a clothing store database and used basic SQl concepts to analyze the data.
 
---Create a clothing store database
+Create a clothing store database:
 
 CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, color TEXT, size TEXT, year_made INTEGER);
 INSERT INTO store VALUES (1, "tshirt", 2.99, "blue", "small", 1990);
@@ -19,11 +19,11 @@ INSERT INTO store VALUES (13, "jeanjacket", 13.99, "grey", "large", 2008);
 INSERT INTO store VALUES (14, "sweatsuit", 19.99, "pink", "small", 2004);
 INSERT INTO store VALUES (15, "tshirt", 3.99, "white", "medium", 1990);
 
---Display the database order by price.
+1. Display the database order by price.
 SELECT * FROM store ORDER BY price;
 
---What is the average price of tshirts from the store?
+2. What is the average price of tshirts from the store?
 SELECT AVG(price) "avg tshirt item price" FROM store WHERE item="tshirt"; 
 
---What is the sum of all items from the store?
+3. What is the sum of all items from the store?
 SELECT SUM(price) FROM store
